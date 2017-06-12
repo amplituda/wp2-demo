@@ -1,0 +1,488 @@
+/* Application specific Styles */
+
+body
+  background-color: var(--app-viewport-bg-color)
+
+.vclApp
+  min-height: 100vh
+
+.vclViewport
+  position: relative
+  background-color: #cccccc
+  box-shadow: 0px 6px 9px 0px rgba(0,0,0,0.47)
+  box-sizing: border-box
+  transform: translateY(0, -0rem)
+  transition-property: -webkit-transform
+  transition-property: transform
+  transition-duration: 0.155s
+  transition-timing-function: ease-out
+
+.vclContentArea
+  margin-left: .8rem
+  margin-right: .8rem
+
+@media (max-width: 650px)
+  .vclViewport
+    padding-top: 0
+    padding-right: 0
+    padding-left: 0
+
+.vclButton
+  &> .vclIcogram
+    font-weight: 200
+    font-size: 1.2em
+
+.nfIndexStage
+  height: 100vh
+  background-color: var(--white)
+  padding: var(--nf-layout-viewport-gutter)
+  padding-bottom: 4rem
+  & .vclApp
+    background-image: radial-gradient(#ffffff, #e0e0e0)
+    height: 100%
+    min-height: 0
+    width: auto
+    max-width: none
+    & .nfIndexContent
+      height: 100%
+
+@media (max-width: 650px)
+  .nfIndexStage
+    padding: 0
+  .nfCollapseBGroup
+    & .vclButton
+      margin: 0
+      padding: 0
+      width: 100%
+
+/* Adaptation for bsicons */
+
+.vclIcogram
+  & .vclText
+    margin-top: 1px
+
+.bsicon
+  stroke: currentColor
+  stroke-width: 6.25%
+  stroke-linecap: round
+  stroke-linejoin: round
+  fill: none
+  width: 1em
+  height: 1em
+  margin: 0
+
+/* Index page */
+
+.nfLogoContainer
+  width: 100%
+  & .nfLogoIndex
+    width: 10rem
+    /* filter: grayscale(40%) */
+
+.nfLogoTagLine
+  font-weight: 600
+  margin-top: 1.8rem
+  margin-bottom: 0.5rem
+  font-size: 1.6rem
+
+/* Content page layout */
+
+.nfLogo
+  margin-left: -0.0rem
+  width: 8rem
+  vertical-align: middle
+
+.vclApplicationHeader
+  padding-top: 1.2rem
+  overflow: hidden
+  margin-bottom: 1.2rem
+  & .nfMenuButton
+    font-size: 1.8em
+    height: auto
+    padding-right: 0.8rem
+
+/* Static footer (index page) */
+
+.nfStaticFooter
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 0.65rem
+  padding-left: var(--nf-layout-viewport-gutter)
+  padding-right: var(--nf-layout-viewport-gutter)
+  & .nfLegalButton, 
+  & .nfContactButton
+    min-width: initial
+    font-weight: 400
+  & .nfCopyTag
+    display: inline-block
+    font-size: 0.9em
+    color: var(--gray)
+    margin-top: 0.5rem
+    padding: 0
+
+@media (max-width: 650px)
+  .nfStaticFooter
+    padding-left: 0
+    padding-right: 0
+
+/* Index and page footers */
+
+.vclApplicationFooterIndex
+  color: var(--white)
+  margin-top: 4.6rem
+  & .vclListItem
+    &:hover,
+    &:active,
+    &:focus
+      color: var(--nf-sand-light-35)
+
+@media (max-width: 650px)
+  .vclApplicationFooterIndex
+    margin-top: 0.8rem
+
+.vclApplicationFooter
+  margin-top: 2.5rem
+  & .vclListItem
+    &:hover,
+    &:active,
+    &:focus
+      color: var(--nf-stone-dark)
+
+.nfLegalLinks
+  display: inline-block
+
+.nfCopyTag
+  padding-right: 0.8rem
+
+@media (max-width: 650px)
+  .nfLegalLinks
+    & a.vclListItem
+      display: block !important
+  .vclApplicationFooterIndex
+    & .nfCopyTag
+      align-self: flex-end
+      transform: rotate(-90deg)
+      margin-right: -4em
+      margin-bottom: 4.5rem
+
+/* Layers */
+
+.vclLayerCover
+  background-color: var(--white)
+  background-image: url(/imgs/pattern_light.png)
+  background-size: 30px 28px
+
+.nfMenuLayer,
+.nfMenuLayerCover
+  display: none
+
+.nfCookieAcceptLayer,
+.nfCookieAcceptLayerCover
+  display: none
+
+.nfMenuLayerSuccess
+  margin-top: 4.8rem
+  display: none
+  text-align: center
+  & span
+    color: var(--success-medium-color)
+    font-weight: bold
+    font-size: 1.1em
+  & span.nfMenuLayerSuccessSub
+    margin-top: 0.2rem
+    font-size: 1.0em
+    font-weight: normal
+    color: var(--success-medium-color)
+
+.nfMenuLayerError
+  margin-top: 4.8rem
+  display: none
+  text-align: center
+  & span
+    color: var(--error-medium-color)
+    font-weight: bold
+    font-size: 1.1em
+  & span.nfMenuLayerErrorSub
+    margin-top: 0.2rem
+    font-size: 1.0em
+    font-weight: normal
+    color: var(--error-medium-color)
+
+.nfAcceptCookiesButton
+  margin-top: 0.5em
+
+.vclLayer
+  &.nfMenuLayer
+    background-color: #383c4c
+    margin: var(--nf-layout-viewport-gutter)
+
+.vclLayerCover
+  &.nfMenuLayerCover
+    background-color: var(--nf-stone-darker)
+    background-image: none
+
+.nfMenuLayer
+  overflow-y: auto
+  cursor: url("/imgs/close_icon_cursor.png"), auto
+  & nav
+    & .vclNavigationItem
+      font-size: 1.2em
+      color: var(--white)
+      text-align: center
+      &:before,
+      &:after
+        content: ""
+        display: inline-block
+        width: 50%
+        height: 1px
+        margin-top: 3px
+        position: absolute
+        bottom: 10px
+        background-color: #fff
+        opacity: 1
+        text-align: center
+        transform: translateZ(0) scaleX(0)
+        transition-property: -webkit-transform
+        transition-property: transform
+        transition-duration: 1s
+        transition-timing-function: cubic-bezier(0.19,1,.22,1)
+        backface-visibility: hidden
+
+.nfMenuLayerNLForm
+  margin-top: 3.8rem
+  max-width: 28rem
+  & .vclInputGroup
+    font-size: 1.2rem
+  & .vclFormControlLabel
+    color: var(--white)
+    text-align: center
+  & .vclInput
+    border: 0
+    background-color: var(--nf-stone-darker)
+    color: var(--white)
+
+/* Misc */
+
+/* TODO hack for policies */
+
+iframe
+  width: 100%
+  height: 80vh
+  border: 0
+
+/* Animations */
+
+.nfAnimScaleFadeIn
+  transform: scale(.8)
+  animation: scale-fade-in .3s linear 0s 1 forwards
+
+@keyframes scale-fade-in
+  0%
+    transform: scale(.8)
+    opacity: 0
+  100%
+    transform: scale(1)
+    opacity: 1
+
+.nfAnimScaleFadeOut
+  transform: scale(1)
+  animation: scale-fade-out .3s linear 0s 1 forwards
+
+@keyframes scale-fade-out
+  0%
+    transform: scale(1)
+    opacity: 1
+  100%
+    transform: scale(0.8)
+    opacity: 0
+
+/* Shared */
+
+.nfLinkDataList
+  & img
+    max-width: 9rem
+    padding: 2rem
+  & .vclIcon
+    font-size: 7rem
+    padding: 3rem
+  & .nfLinkDataListContent
+    margin-left: 3rem
+
+@media (max-width: 650px)
+  .nfLinkDataList
+    & img
+      max-width: 5rem
+      padding: 0.5rem
+    & .vclIcon
+      font-size: 5rem
+      padding: 2rem
+    & .vclDataListItem
+      flex-direction: column
+    & .nfLinkDataListContent
+      margin-left: 0
+
+.nfContentTeaser
+  min-height: 21em
+  background-size: cover
+  padding-top: 1.8rem
+  & h2
+    color: var(--white)
+    margin: 0
+    font-size: 3.0em
+    margin-top: 3.5rem
+    margin-left: 3rem
+  & p
+    color: var(--white)
+    margin: 0
+    font-size: 1.45em
+    margin-top: 1.4rem
+    margin-left: 3rem
+    max-width: 48%
+
+@media (max-width: 650px)
+  .nfContentTeaser
+    min-height: 13em
+    background-image: none
+    background: linear-gradient(45deg, #0B4182 1%, #1e88e5 64%, #40BAF5 97%) !important
+    padding: 1rem
+    padding-left: .8rem
+    padding-right: .8rem
+    & h2
+      color: var(--white)
+      margin: 0
+      font-size: 1.5em
+      margin-top: 1.8rem
+      margin-left: 0
+    & p
+      color: var(--white)
+      margin: 0
+      font-size: 1.15em
+      margin-top: 1rem
+      margin-left: 0
+      max-width: 100% !important
+    & .vclLooseButtonGroup
+      margin-top: 1rem !important
+      margin-left: 0 !important
+
+/* OSS Page */
+
+.nfOssTeaser
+  background-image: url("/imgs/Montafon_pano1.jpg")
+  & p
+    max-width: 45%
+
+/* Products Page */
+
+.nfProductsTeaser
+  background-image: url("/imgs/pcb_closeup.jpg")
+  & p
+    max-width: 40%
+
+/* Competencies Page */
+
+.nfCompetenciesTeaser
+  background-image: url("/imgs/sky_plane_with_trail.jpg")
+  & p
+    max-width: 100%
+
+.nfCompetenciesContent
+  margin-top: 3rem
+  margin-left: 0.8rem
+  margin-right: 0.8rem
+
+.nfCompetencyPanel
+  min-width: 18rem
+  max-width: 25rem
+  & h3
+    text-align: center
+
+@media (max-width: 1100px)
+  .nfCompetencyPanel
+    width: 45%
+    max-width: none
+
+@media (max-width: 800px)
+  .nfCompetencyPanel
+    width: 100%
+    max-width: none
+
+/* Contact Page */
+
+.nfContactTeaser
+  background-image: url("/imgs/Ponte_Vasco_da_Gama_pano1.jpg")
+  background-position-y: 68%
+  & p
+    max-width: 60%
+  & .vclLooseButtonGroup
+    margin-top: 1.2em
+    margin-left: 3rem
+    & .vclButton
+      color: var(--white)
+      border-color: var(--white)
+
+.nfContactDl
+  overflow: hidden
+
+@media (max-width: 1000px)
+  ul.nfContactOfficeList
+    flex-direction: column
+    align-items: center
+
+.nfContactLocIcon
+  margin-right: 1.8rem
+  max-width: 8.5rem
+
+.nfContactMap
+  height: 28em
+  width: 35em
+
+.nfContactButton
+  text-align: center
+  min-width: 18rem
+
+/* Legal Information Page */
+
+.nfLegalInformationPage
+  min-height: 80vh
+
+/* Newsletter Page */
+
+.nfNewsletterPage
+  min-height: 80vh
+  background: transparent url("/imgs/light-gray-bg.svg") no-repeat 0 0
+  background-size: cover
+  background-position-x: 50%
+  background-color: #cccccc
+
+.nfNewsletterPageInner
+  max-width: 35em
+  margin: 0 0.8rem
+
+.nfMLSuccess
+  margin-top: 4.8rem
+  display: none
+  text-align: center
+  & span
+    color: var(--success-medium-color)
+    font-weight: bold
+    font-size: 1.1em
+  & span.nfMLSuccessSub
+    margin-top: 0.2rem
+    font-size: 1.0em
+    font-weight: normal
+    color: var(--success-medium-color)
+
+.nfMLError
+  margin-top: 4.8rem
+  display: none
+  text-align: center
+  & span
+    color: var(--error-medium-color)
+    font-weight: bold
+    font-size: 1.1em
+  & span.nfMLErrorSub
+    margin-top: 0.2rem
+    font-size: 1.0em
+    font-weight: normal
+    color: var(--error-medium-color)

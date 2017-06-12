@@ -1,0 +1,71 @@
+/* VCL overrides for this theme */
+
+/* Flex Layout */
+
+.vclGridRow
+  &> .noLGutterMargin
+    padding-left: 0
+  &> .noRGutterMargin
+    padding-right: 0
+
+/* Icon */
+
+.vclIcon
+  &.mdi,
+  &.sie
+    font-size: 1.45em
+
+/* Application Header */
+
+.vclApplicationHeader
+  margin: 0
+  & .vclAppName
+    font-size: 1.2em
+  & .vclLogo
+    width: 9.5em
+  & .vclButton
+    font-size: 1.01em
+
+/* Popover */
+
+/* Layer */
+
+.vclLayerBox
+  min-width: 70%
+
+.vclLayer
+  & .vclToolbar
+    background-color: var(--gray-dark-1)
+  & .vclContainer
+    margin: 0
+  & .vclDropdown
+    z-index: 500
+
+@media (max-width: 1024px)
+  .vclLayerBox
+    width: 100%
+    height: auto
+    max-width: none
+
+/* prevent strange issue where head is cut off when y-scrolling is enabled
+@media (max-width: 800px)
+  .vclLayer
+    align-items: initial
+*/
+
+/* Data List */
+
+.vclDataList
+  & .vclDataListHeader
+    padding: 0
+  & .vclDataListItem
+    padding: var(--flex-layout-half-gutter-width)
+
+/* Toolbar */
+
+.vclToolbar.fuiViewToolbar
+  & .fuiViewToolbarL1
+    background-color: var(--gray-light-6)
+  & .fuiViewToolbarL2
+    background-color: var(--gray-light-6)
+    border-bottom: 1px solid var(--gray-light-3)
